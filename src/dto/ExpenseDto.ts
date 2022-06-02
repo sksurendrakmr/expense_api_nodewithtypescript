@@ -1,3 +1,5 @@
+import { Types } from "mongoose";
+
 export type ExpenseTitle =
   | "FoodAndDrink"
   | "Recharge"
@@ -16,6 +18,7 @@ export type ExpenseDto = {
   title: ExpenseTitle;
   amount: number;
   category: ExpenseCategory;
-  description?:string;
-  date?:Date
+  description?: string;
+  date?: Date;
+  user: Types.ObjectId;
 };
