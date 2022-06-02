@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import joi from "joi";
+import Joi from "joi";
 import { CustomReq } from "../config/CustomReq";
 import { ExpenseDto } from "../dto/ExpenseDto";
 import { Expense } from "../models/ExpenseModel";
@@ -72,12 +72,12 @@ export const deleteExpense = async (
 };
 
 const validateExpense = (expense: ExpenseDto) => {
-  const schema = joi.object({
-    title: joi.string().required(),
-    category: joi.string().required(),
-    amount: joi.number().required(),
-    description: joi.string(),
-    date: joi.date(),
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    category: Joi.string().required(),
+    amount: Joi.number().required(),
+    description: Joi.string(),
+    date: Joi.date(),
   });
 
   return schema.validate(expense);

@@ -1,8 +1,9 @@
 import express from 'express'
-import 'express-async-errors'
 import {config} from 'dotenv'
+import 'express-async-errors'
 
 import expenseRoute from './routes/ExpenseRoute'
+import userRoute from './routes/UserRoute'
 import { db } from './db/db';
 
 config();
@@ -11,6 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/api/v1/expense',expenseRoute);
+app.use('/api/v1/user',userRoute)
 
 
 app.listen(process.env.PORT_NUMBER as string,()=>{
