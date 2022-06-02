@@ -4,7 +4,7 @@ const expenseSchema = new mongoose.Schema({
     title:{
         type:String,
         required:[true,'Provide a valid expense title'],
-        enum:['Food & Drink','Recharge','Travel','Fuel','Investment','Rent','Shopping','Groceries','Others','Bill']
+        enum:['FoodAndDrink','Recharge','Travel','Fuel','Investment','Rent','Shopping','Groceries','Others','Bill']
     },
     amount:{
         type:Number,

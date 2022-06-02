@@ -1,5 +1,5 @@
 export type ExpenseTitle =
-  | "Food & Drink"
+  | "FoodAndDrink"
   | "Recharge"
   | "Bill"
   | "Others"
