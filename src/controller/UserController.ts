@@ -23,7 +23,7 @@ export const registerUser = async(req:CustomReq<UserDto>,res:Response)=>{
 
     const token = savedUser.generateToken();
 
-    res.status(201).json({user:savedUser,token});
+    res.status(201).json({user:{name:savedUser.name,email:savedUser.email},token});
 
 }
 

@@ -16,13 +16,11 @@ export const auth = async(req:AuthMiddlewareReq,res:Response,next:NextFunction) 
             if(!user) return res.status(401).json({message:'User is not authorized'});
 
             req.user = user;
-            console.log("auth middleware",req.user);
-            
             next()
             
         } catch (error) {
             res.status(401).json({message:'User is not authorized',error})            
         }
     }
-    res.status(401).json({message:'User is not authorized'})            
+    if(!token) return res.status(401).json({message:'User is not authorized'})            
 }
