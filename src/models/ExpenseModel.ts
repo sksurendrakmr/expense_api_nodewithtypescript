@@ -41,6 +41,9 @@ const expenseSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    expenseImgs: {
+      type: [String],
+    },
   },
   { timestamps: true }
 );

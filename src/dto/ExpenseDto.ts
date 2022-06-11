@@ -20,5 +20,6 @@ export type ExpenseDto = {
   category: ExpenseCategory;
   description?: string;
   date?: Date;
+  expenseImgs?: string[];
   user: Types.ObjectId;
 };

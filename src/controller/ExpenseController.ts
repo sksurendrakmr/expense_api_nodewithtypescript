@@ -32,14 +32,7 @@ export const saveExpense = async (
   const { error } = validateExpense(req.body);
   if (error) return res.status(400).json({ message: error.details[0].message });
 
-  const savedExpense = await Expense.create<ExpenseDto>({
-    title: req.body.title,
-    amount: req.body.amount,
-    description: req.body.description,
-    category: req.body.category,
-    date: req.body.date,
-    user: req.body.user,
-  });
+  const savedExpense = await Expense.create<ExpenseDto>(req.body);
 
   res.status(201).json(savedExpense);
 };
@@ -93,6 +86,7 @@ const validateExpense = (expense: ExpenseDto) => {
     description: Joi.string(),
     date: Joi.date(),
     user: Joi.string().required(),
+    expenseImgs: Joi.array().items(Joi.string()),
   });
 
   return schema.validate(expense);
