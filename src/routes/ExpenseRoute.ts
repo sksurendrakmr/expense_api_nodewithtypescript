@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   deleteExpense,
+  expenseStats,
   getExpense,
   saveExpense,
   updateExpense,
@@ -16,4 +17,5 @@ router
   .post(auth, uploadExpenseImg, resizeExpenseImgs, saveExpense);
 router.route("/:id").put(auth, updateExpense).delete(auth, deleteExpense);
 
+router.get("/stats/:month", expenseStats);
 export default router;

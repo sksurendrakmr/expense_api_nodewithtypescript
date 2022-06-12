@@ -32,12 +32,7 @@ export const resizeExpenseImgs = async (
     [filedName: string]: Express.Multer.File[];
   };
 
-  //   console.log(req.files?.expenseImgs);
-
-  console.log(typedReqFiles.expenseImgs);
-
   if (!typedReqFiles.expenseImgs) return next();
-  console.log(typedReqFiles.expenseImgs);
 
   req.body.expenseImgs = [];
   const expenseImgsPromise = typedReqFiles.expenseImgs.map((file, index) => {
