@@ -22,3 +22,12 @@ We will have all the required APIs available in lower environments by Q2.
 Currently, the credit app is making 75k requests per week, but Workday only allows a maximum of 35k requests within a 24-hour period. Seth will discuss with the respective team and inform us if we need to consider changing the type of API.
 
 
+
+Seth is currently working on the API, and it is expected to be completed and available in the lower environment in Kong Gateway by the end of Q1. Following that, the Identity team will begin working on the feature starting from Q2.
+
+The EC product team will review the feature and develop the necessary UI mockups for error scenarios.
+
+
+
+
+
